@@ -32,7 +32,7 @@ Ein Cinnamon-Panel-Applet, das verfügbare Audio-Ausgänge als Icon in der Taskl
 2. Applet-Verzeichnis in den Cinnamon-Applet-Pfad kopieren:
 
    ```bash
-   cp -r .local/cinnamon/applets/audio-output-switcher@ktt73 \
+   cp -r .local/share/cinnamon/applets/audio-output-switcher@ktt73 \
          ~/.local/share/cinnamon/applets/
    ```
 
@@ -48,7 +48,7 @@ Klick auf das Lautsprecher-/Kopfhörer-Icon in der Taskleiste öffnet ein Menü 
 
 ```
 audio-output-switcher/
-└── .local/cinnamon/applets/
+└── .local/share/cinnamon/applets/
     └── audio-output-switcher@ktt73/
         ├── applet.js       # Applet-Logik (JavaScript)
         └── metadata.json   # Metadaten für Cinnamon
