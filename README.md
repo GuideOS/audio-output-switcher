@@ -1,4 +1,4 @@
-# sound@cinnamon.org – GuideOS Fork
+# `sound@cinnamon.org` – GuideOS Fork
 
 > **GuideOS-Fork** – Angepasst für [GuideOS](https://github.com/GuideOS), eine auf Debian basierende Distribution.
 
@@ -43,6 +43,7 @@ Das bekannte Sound-Applet erhält dadurch ohne separate Installation einen zusä
    ```
 
    > **Achtung:** Ein bereits vorhandenes Original-Applet `sound@cinnamon.org` wird dabei überschrieben. Vorher ggf. sichern:
+   >
    > ```bash
    > cp -r ~/.local/share/cinnamon/applets/sound@cinnamon.org \
    >       ~/.local/share/cinnamon/applets/sound@cinnamon.org.bak
@@ -56,7 +57,7 @@ Klick auf das Sound-Icon in der Taskleiste öffnet das Lautstärke-Menü. Dort b
 
 ## Projektstruktur
 
-```
+```text
 audio-output-switcher/
 └── .local/share/cinnamon/applets/
     └── sound@cinnamon.org/
