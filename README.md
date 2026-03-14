@@ -1,8 +1,8 @@
-# `sound@cinnamon.org` – GuideOS Fork
+# `sound@GuideOS.de` – GuideOS Fork
 
 > **GuideOS-Fork** – Angepasst für [GuideOS](https://github.com/GuideOS), eine auf Debian basierende Distribution.
 
-Dieses Repository enthält eine modifizierte Version des Cinnamon-System-Applets `sound@cinnamon.org`, in die die Funktionalität des Audio-Ausgang-Umschalters direkt integriert wurde.
+Dieses Repository enthält eine modifizierte Version des Cinnamon-System-Applets `sound@cinnamon.org`, umbenannt zu `sound@GuideOS.de` und um die Funktionalität des Audio-Ausgang-Umschalters erweitert.
 
 Das bekannte Sound-Applet erhält dadurch ohne separate Installation einen zusätzlichen Untermenüpunkt **„Audio Output"** zum Umschalten zwischen allen verfügbaren Ausgabegeräten – aktive Audio-Streams werden dabei automatisch mitbewegt.
 
@@ -34,21 +34,32 @@ Das bekannte Sound-Applet erhält dadurch ohne separate Installation einen zusä
 
    > Der `main`-Branch enthält immer den aktuellen stabilen Stand.
 
-2. Das modifizierte Applet in den Cinnamon-Applet-Pfad kopieren:
+2. Original-Applet sichern und ersetzen:
 
    ```bash
-   mkdir -p ~/.local/share/cinnamon/applets/
-   cp -r .local/share/cinnamon/applets/sound@cinnamon.org \
-         ~/.local/share/cinnamon/applets/
+   sudo cp -r /usr/share/cinnamon/applets/sound@cinnamon.org \
+              /usr/share/cinnamon/applets/sound@cinnamon.org.bak
+   sudo rm -rf /usr/share/cinnamon/applets/sound@cinnamon.org
    ```
 
-   > **Achtung:** Das Original-Applet liegt unter `/usr/share/cinnamon/applets/sound@cinnamon.org` und wird durch diesen Fork im benutzerspezifischen Pfad `~/.local/` **überlagert** (nicht überschrieben). Cinnamon bevorzugt automatisch die Version in `~/.local/`. Um den Fork rückgängig zu machen, genügt es, das Verzeichnis wieder zu löschen:
+3. Den Fork systemweit einspielen:
+
+   ```bash
+   sudo cp -r .local/share/cinnamon/applets/sound@GuideOS.de \
+              /usr/share/cinnamon/applets/
+   ```
+
+   > **Hinweis:** Das Applet läuft unter dem UUID `sound@GuideOS.de`. Es ersetzt das Original (`sound@cinnamon.org`) vollständig. Die Änderung gilt für alle Benutzer des Systems. Um zum Original zurückzukehren:
    >
    > ```bash
-   > rm -rf ~/.local/share/cinnamon/applets/sound@cinnamon.org
+   > sudo rm -rf /usr/share/cinnamon/applets/sound@GuideOS.de
+   > sudo mv /usr/share/cinnamon/applets/sound@cinnamon.org.bak \
+   >         /usr/share/cinnamon/applets/sound@cinnamon.org
    > ```
+   >
+   > Anschließend in den Cinnamon-Einstellungen → Applets das alte `sound@cinnamon.org` wieder hinzufügen und `sound@GuideOS.de` entfernen.
 
-3. Cinnamon neu starten (`Alt+F2` → `r` → Enter) oder abmelden und neu anmelden.
+4. Cinnamon neu starten (`Alt+F2` → `r` → Enter) oder abmelden und neu anmelden.
 
 ## Verwendung
 
@@ -59,7 +70,7 @@ Klick auf das Sound-Icon in der Taskleiste öffnet das Lautstärke-Menü. Dort b
 ```text
 audio-output-switcher/
 └── .local/share/cinnamon/applets/
-    └── sound@cinnamon.org/
+    └── sound@GuideOS.de/      # wird nach /usr/share/cinnamon/applets/ kopiert
         ├── applet.js          # Sound-Applet mit integriertem Audio-Ausgang-Umschalter
         ├── metadata.json
         └── settings-schema.json
@@ -67,4 +78,4 @@ audio-output-switcher/
 
 ## Lizenz
 
-MIT License – © 2026 GuideOS. Siehe [LICENSE](LICENSE).
+GPL-2.0 License – © 2026 GuideOS. Siehe [LICENSE](LICENSE).
