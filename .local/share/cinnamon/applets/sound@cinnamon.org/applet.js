@@ -962,6 +962,7 @@ class MediaPlayerLauncher extends PopupMenu.PopupBaseMenuItem {
     }
 }
 
+//Fork Anfang
 // ---------------------------------------------------------------------------
 // Audio-Ausgang-Umschalter: synchroner Shell-Aufruf (pactl)
 // ---------------------------------------------------------------------------
@@ -977,6 +978,7 @@ function _audioSpawnSync(cmd) {
         return null;
     }
 }
+//Fork Ende
 
 class CinnamonSoundApplet extends Applet.TextIconApplet {
     constructor(metadata, orientation, panel_height, instanceId) {
@@ -1133,6 +1135,7 @@ class CinnamonSoundApplet extends Applet.TextIconApplet {
 
         this._showFixedElements();
 
+        //Fork Anfang
         // Audio-Ausgang: Menü beim Öffnen neu aufbauen + Label alle 4 s auffrischen
         this.menu.connect('open-state-changed', (menu, isOpen) => {
             if (isOpen) this._buildAudioOutputMenu();
@@ -1141,6 +1144,7 @@ class CinnamonSoundApplet extends Applet.TextIconApplet {
             this._refreshAudioOutputItem();
             return GLib.SOURCE_CONTINUE;
         });
+        //Fork Ende
 
         this.set_show_label_in_vertical_panels(false);
         this.set_applet_label(this._applet_label.get_text());
@@ -1190,10 +1194,12 @@ class CinnamonSoundApplet extends Applet.TextIconApplet {
             Mainloop.source_remove(this._iconTimeoutId);
             this._iconTimeoutId = 0;
         }
+        //Fork Anfang
         if (this._audioOutputTimeout) {
             Mainloop.source_remove(this._audioOutputTimeout);
             this._audioOutputTimeout = null;
         }
+        //Fork Ende
 
         this._dbus.disconnectSignal(this._ownerChangedId);
 
@@ -1562,9 +1568,11 @@ class CinnamonSoundApplet extends Applet.TextIconApplet {
         this.menu.addMenuItem(this._outputVolumeSection);
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 
+        //Fork Anfang
         // Audio-Ausgang-Umschalter (integriert aus audio-output-switcher@ktt73)
         this._audioOutputItem = new PopupMenu.PopupSubMenuMenuItem(_("Audio Output"));
         this.menu.addMenuItem(this._audioOutputItem);
+        //Fork Ende
 
         this.menu.addSettingsAction(_("Sound Settings"), 'sound');
     }
@@ -1808,6 +1816,7 @@ class CinnamonSoundApplet extends Applet.TextIconApplet {
         Main.systrayManager.unregisterTrayIconReplacement(this.metadata.uuid);
     }
 
+    //Fork Anfang
     // ── Audio-Ausgang Umschalter (integriert aus audio-output-switcher@ktt73) ──
 
     _parseAudioSinks() {
@@ -1977,6 +1986,7 @@ class CinnamonSoundApplet extends Applet.TextIconApplet {
             this._audioOutputItem.label.set_text(_("Audio Output"));
         }
     }
+    //Fork Ende
 }
 
 function main(metadata, orientation, panel_height, instanceId) {
