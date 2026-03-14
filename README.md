@@ -42,11 +42,10 @@ Das bekannte Sound-Applet erhält dadurch ohne separate Installation einen zusä
          ~/.local/share/cinnamon/applets/
    ```
 
-   > **Achtung:** Ein bereits vorhandenes Original-Applet `sound@cinnamon.org` wird dabei überschrieben. Vorher ggf. sichern:
+   > **Achtung:** Das Original-Applet liegt unter `/usr/share/cinnamon/applets/sound@cinnamon.org` und wird durch diesen Fork im benutzerspezifischen Pfad `~/.local/` **überlagert** (nicht überschrieben). Cinnamon bevorzugt automatisch die Version in `~/.local/`. Um den Fork rückgängig zu machen, genügt es, das Verzeichnis wieder zu löschen:
    >
    > ```bash
-   > cp -r ~/.local/share/cinnamon/applets/sound@cinnamon.org \
-   >       ~/.local/share/cinnamon/applets/sound@cinnamon.org.bak
+   > rm -rf ~/.local/share/cinnamon/applets/sound@cinnamon.org
    > ```
 
 3. Cinnamon neu starten (`Alt+F2` → `r` → Enter) oder abmelden und neu anmelden.
