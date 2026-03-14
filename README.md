@@ -31,6 +31,30 @@ Das bekannte Sound-Applet erhält dadurch ohne separate Installation einen zusä
    git clone https://github.com/GuideOS/audio-output-switcher.git
    ```
 
+2. Das modifizierte Applet in den Cinnamon-Applet-Pfad kopieren:
+
+   ```bash
+   cp -r .local/share/cinnamon/applets/sound@cinnamon.org \
+         ~/.local/share/cinnamon/applets/
+   ```
+
+3. Cinnamon neu starten (`Alt+F2` → `r` → Enter) oder abmelden und neu anmelden.
+
+## Verwendung
+
+Klick auf das Sound-Icon in der Taskleiste öffnet das Lautstärke-Menü. Dort befindet sich der Eintrag **„Audio Output"** mit allen verfügbaren Ausgängen. Der aktive Ausgang ist mit ✓ markiert. Ein Klick wechselt sofort und verschiebt alle laufenden Streams.
+
+## Projektstruktur
+
+```
+audio-output-switcher/
+└── .local/share/cinnamon/applets/
+    └── sound@cinnamon.org/
+        ├── applet.js          # Sound-Applet mit integriertem Audio-Ausgang-Umschalter
+        ├── metadata.json
+        └── settings-schema.json
+```
+
 ## Lizenz
 
 MIT License – © 2026 GuideOS. Siehe [LICENSE](LICENSE).
