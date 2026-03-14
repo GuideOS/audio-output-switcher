@@ -29,14 +29,24 @@ Das bekannte Sound-Applet erhält dadurch ohne separate Installation einen zusä
 
    ```bash
    git clone https://github.com/GuideOS/audio-output-switcher.git
+   cd audio-output-switcher
    ```
+
+   > Der `main`-Branch enthält immer den aktuellen stabilen Stand.
 
 2. Das modifizierte Applet in den Cinnamon-Applet-Pfad kopieren:
 
    ```bash
+   mkdir -p ~/.local/share/cinnamon/applets/
    cp -r .local/share/cinnamon/applets/sound@cinnamon.org \
          ~/.local/share/cinnamon/applets/
    ```
+
+   > **Achtung:** Ein bereits vorhandenes Original-Applet `sound@cinnamon.org` wird dabei überschrieben. Vorher ggf. sichern:
+   > ```bash
+   > cp -r ~/.local/share/cinnamon/applets/sound@cinnamon.org \
+   >       ~/.local/share/cinnamon/applets/sound@cinnamon.org.bak
+   > ```
 
 3. Cinnamon neu starten (`Alt+F2` → `r` → Enter) oder abmelden und neu anmelden.
 
