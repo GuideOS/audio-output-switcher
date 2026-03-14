@@ -1,0 +1,8 @@
+{
+ "uuid": "sound@cinnamon.org",
+ "name": "Sound (GuideOS Fork)",
+ "description": "A Cinnamon applet to control sound and music. GuideOS fork: adds an 'Audio Output' submenu to switch PulseAudio/PipeWire sinks directly from the panel, with automatic stream migration.",
+ "icon": "cs-sound",
+ "fork": "GuideOS",
+ "fork-url": "https://github.com/GuideOS/audio-output-switcher"
+}
