@@ -1,20 +1,22 @@
-# audio-output-switcher
+# sound@cinnamon.org – GuideOS Fork
 
-> Entwickelt für [GuideOS](https://github.com/GuideOS) – eine auf Debian basierende Distribution.
+> **GuideOS-Fork** – Angepasst für [GuideOS](https://github.com/GuideOS), eine auf Debian basierende Distribution.
 
-Ein Cinnamon-Panel-Applet, das verfügbare Audio-Ausgänge als Icon in der Taskleiste anzeigt. Per Klick öffnet sich ein Menü zum Umschalten zwischen allen erkannten Ausgabegeräten – aktive Audio-Streams werden dabei automatisch mitbewegt.
+Dieses Repository enthält eine modifizierte Version des Cinnamon-System-Applets `sound@cinnamon.org`, in die die Funktionalität des Audio-Ausgang-Umschalters direkt integriert wurde.
+
+Das bekannte Sound-Applet erhält dadurch ohne separate Installation einen zusätzlichen Untermenüpunkt **„Audio Output"** zum Umschalten zwischen allen verfügbaren Ausgabegeräten – aktive Audio-Streams werden dabei automatisch mitbewegt.
 
 ---
 
 ## Features
 
-- Zeigt das aktive Ausgabegerät als kontextgerechtes Symbol in der Taskleiste
+- Untermenü **„Audio Output"** direkt im vorhandenen Lautstärke-Applet
 - Unterstützte Gerätetypen: Bluetooth, HDMI/DisplayPort, S/PDIF, USB-Audio, Line-out, Kopfhörer, Lautsprecher
 - Kompatibel mit **PipeWire** (pipewire-pulse) und **PulseAudio**
 - Verschiebt alle laufenden Audio-Streams automatisch beim Umschalten
-- Aktualisiert Icon und Geräteliste alle 4 Sekunden (erkennt z. B. neu verbundene Bluetooth-Geräte)
-- Filtert Monitor-Sinks (interne PulseAudio/PipeWire-Konstrukte) automatisch aus
-- Deutschsprachige Gerätebeschriftungen
+- Untermenü-Label zeigt immer den aktuell aktiven Ausgang an
+- Aktualisiert die Geräteliste alle 4 Sekunden (erkennt z. B. neu verbundene Bluetooth-Geräte)
+- Filtert Monitor-Sinks automatisch aus
 
 ## Voraussetzungen
 
@@ -23,35 +25,34 @@ Ein Cinnamon-Panel-Applet, das verfügbare Audio-Ausgänge als Icon in der Taskl
 
 ## Installation
 
-1. Repository klonen oder als ZIP herunterladen:
+1. Repository klonen:
 
    ```bash
    git clone https://github.com/GuideOS/audio-output-switcher.git
    ```
 
-2. Applet-Verzeichnis in den Cinnamon-Applet-Pfad kopieren:
+2. Das modifizierte Applet in den Cinnamon-Applet-Pfad kopieren:
 
    ```bash
-   cp -r .local/cinnamon/applets/audio-output-switcher@ktt73 \
+   cp -r .local/share/cinnamon/applets/sound@cinnamon.org \
          ~/.local/share/cinnamon/applets/
    ```
 
-3. Cinnamon neu starten (z. B. `Alt+F2` → `r` → Enter) oder abmelden und neu anmelden.
-
-4. Im Cinnamon-Einstellungsmenü unter **Applets** das Applet „Audio-Ausgang Umschalter" aktivieren und zur Taskleiste hinzufügen.
+3. Cinnamon neu starten (`Alt+F2` → `r` → Enter) oder abmelden und neu anmelden.
 
 ## Verwendung
 
-Klick auf das Lautsprecher-/Kopfhörer-Icon in der Taskleiste öffnet ein Menü mit allen verfügbaren Audio-Ausgängen. Der aktive Ausgang ist markiert. Klick auf einen anderen Eintrag schaltet sofort um.
+Klick auf das Sound-Icon in der Taskleiste öffnet das Lautstärke-Menü. Dort befindet sich der Eintrag **„Audio Output"** mit allen verfügbaren Ausgängen. Der aktive Ausgang ist mit ✓ markiert. Ein Klick wechselt sofort und verschiebt alle laufenden Streams.
 
 ## Projektstruktur
 
 ```
 audio-output-switcher/
-└── .local/cinnamon/applets/
-    └── audio-output-switcher@ktt73/
-        ├── applet.js       # Applet-Logik (JavaScript)
-        └── metadata.json   # Metadaten für Cinnamon
+└── .local/share/cinnamon/applets/
+    └── sound@cinnamon.org/
+        ├── applet.js          # Sound-Applet mit integriertem Audio-Ausgang-Umschalter
+        ├── metadata.json
+        └── settings-schema.json
 ```
 
 ## Lizenz

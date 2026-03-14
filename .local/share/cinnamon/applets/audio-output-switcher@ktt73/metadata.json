@@ -1,8 +1,0 @@
-{
-    "uuid": "audio-output-switcher@ktt73",
-    "name": "Audio-Ausgang Umschalter",
-    "description": "Zeigt verfügbare Audio-Ausgänge (Bluetooth, Line-out, HDMI, Kopfhörer) als Icon in der Taskleiste an. Klick öffnet Menü zum Umschalten – inkl. Verschieben aktiver Streams.",
-    "icon": "audio-card",
-    "version": "1.0.0",
-    "max-instances": 1
-}
