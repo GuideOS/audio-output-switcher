@@ -1,9 +1,30 @@
-// =============================================================================
-// GuideOS Fork – sound@cinnamon.org
-// =============================================================================
-// Originalprojekt: Cinnamon-Systemapplet sound@cinnamon.org
-//                  (https://github.com/linuxmint/cinnamon-spices-applets)
+// SPDX-License-Identifier: GPL-2.0-only
 //
+// =============================================================================
+// sound@GuideOS.de – GuideOS Fork des Cinnamon Sound-Applets
+// =============================================================================
+//
+// Originalwerk  : sound@cinnamon.org
+//                 Copyright (C) Linux Mint / Cinnamon Contributors
+//                 https://github.com/linuxmint/cinnamon-spices-applets
+//                 Lizenz: GNU General Public License v2.0
+//
+// Dieses Programm ist ein abgeleitetes Werk (Fork) des oben genannten
+// Originalwerks und steht ebenfalls unter der GNU General Public License
+// Version 2 (GPL-2.0-only). Eine Kopie der Lizenz liegt dem Quellcode bei
+// (siehe LICENSE im Stammverzeichnis dieses Repositories).
+//
+// Copyright (C) 2026 GuideOS – KTT73@GuideOS (https://github.com/GuideOS)
+//
+// This program is free software; you can redistribute it and/or modify it
+// under the terms of the GNU General Public License as published by the Free
+// Software Foundation; version 2 of the License only.
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+// FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+//
+// =============================================================================
 // Fork-Autor     : KTT73@GuideOS (https://github.com/GuideOS)
 // Fork-Datum     : 2026-03-14
 //
